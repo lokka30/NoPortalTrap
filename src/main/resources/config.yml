@@ -1,0 +1,67 @@
+seconds-in-portal:
+
+  # what is the max 'seconds' value should the plugin check for in this section?
+  max-duration: 15
+
+  # when in a portal for 7 seconds, do this
+  7:
+    send-chat-message:
+      - '&b&lNoPortalTrap:&7 You have been inside a portal for a while. If you remain
+       in this portal, you will be freed soon. This is to prevent portal traps.'
+
+  # when in a portal for 10 seconds, do this
+  10:
+    send-chat-message:
+      - '&b&lNoPortalTrap:&7 You will be teleported in &b5 seconds&7.'
+
+  # ...etc. you can add as many seconds as you want
+  11:
+    send-chat-message:
+      - '&b&lNoPortalTrap:&7 You will be teleported in &b4 seconds&7.'
+
+  12:
+    send-chat-message:
+      - '&b&lNoPortalTrap:&7 You will be teleported in &b3 seconds&7.'
+
+  13:
+    send-chat-message:
+      - '&b&lNoPortalTrap:&7 You will be teleported in &b2 seconds&7.'
+
+  14:
+    send-chat-message:
+      - '&b&lNoPortalTrap:&7 You will be teleported in &b1 second&7.'
+
+  15:
+    send-chat-message:
+      - '&b&lNoPortalTrap:&7 You have been freed.'
+    teleport-to-world-spawn: true
+
+# Should the plugin detect trapped players in portals?
+# Disabling this makes the plugin useless :) it's only
+# here in case you want to temporarily turn it off.
+enabled: true
+
+# It is highly recommended that you do not edit any of the values in this section
+# unless you are an experienced user and you know exactly what you are doing.
+#
+# What materials should NoPortalTrap classify as a portal?
+portal-materials: ['NETHER_PORTAL', 'END_PORTAL']
+
+# It is highly recommended that you do not edit any of the values in this section
+# unless you are an experienced user and you know exactly what you are doing.
+#
+# What debug categories should be enabled?
+debug: []
+
+# It is highly recommended that you do not edit any of the values in this section
+# unless you are an experienced user and you know exactly what you are doing.
+#
+# If NoPortalTrap adds content to the config file over updates
+# then it can check the current file version to makae sure your
+# file has the updates. The original and plugin versions are
+# not used internally but are useful for debugging.
+file-metadata:
+  version:
+    original: 1
+    current: 1
+    plugin: '${project.version}'

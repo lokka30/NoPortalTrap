@@ -1,0 +1,62 @@
+api-version: '1.13'
+authors: ['lokka30']
+load: 'POSTWORLD'
+main: 'me.lokka30.noportaltrap.NoPortalTrap'
+name: 'NoPortalTrap'
+version: '${project.version}'
+website: 'https://github.com/lokka30/NoPortalTrap'
+
+commands:
+  noportaltrap:
+    description: 'Manage the NoPortalTrap plugin.'
+    aliases: ['npt', 'portaltrap']
+    usage: '/<command>'
+
+permissions:
+  'noportaltrap.*':
+    description: 'Contains all permissions for NoPortalTrap.'
+    default: op
+    children:
+      noportaltrap.detect: true
+      noportaltrap.command.*: true
+
+  'noportaltrap.detect':
+    description: 'Allows a player to be part of the NoPortalTrap detection.'
+    default: true
+
+  'noportaltrap.command.*':
+    description: 'Contains all command permissions for NoPortalTrap.'
+    default: op
+    children:
+      'noportaltrap.command.noportaltrap.*': true
+
+  'noportaltrap.command.noportaltrap.*':
+    description: 'Contains all command permissions for `/noportaltrap`.'
+    default: op
+    children:
+      'noportaltrap.command.noportaltrap': true
+      'noportaltrap.command.noportaltrap.toggle': true
+      'noportaltrap.command.noportaltrap.reload': true
+      'noportaltrap.command.noportaltrap.info': true
+
+  'noportaltrap.command.noportaltrap':
+    description: 'Allows a player to run `/noportaltrap`.'
+    default: true
+
+  'noportaltrap.command.noportaltrap.toggle':
+    description: 'Allows a player to run `/noportaltrap toggle`.'
+    default: op
+    children:
+      'noportaltrap.command.noportaltrap': true
+
+  'noportaltrap.command.noportaltrap.reload':
+    description: 'Allows a player to run `/noportaltrap reload`.'
+    default: op
+    children:
+      'noportaltrap.command.noportaltrap': true
+
+  'noportaltrap.command.noportaltrap.info':
+    description: 'Allows a player to run `/noportaltrap info`.'
+    default: true
+    children:
+      'noportaltrap.command.noportaltrap': true
